@@ -1,0 +1,260 @@
+/* Biến màu sắc */
+:root {
+    --primary-color: #3498db; /* Màu chính */
+    --secondary-color: #2ecc71; /* Màu phụ */
+    --background-color: #f4f4f4; /* Màu nền */
+    --text-color: #333333; /* Màu chữ */
+    --dark-background: #1e1e1e; /* Nền tối */
+    --dark-text: #ecf0f1; /* Chữ tối */
+    --menu-background: #4CAF50; /* Màu nền của menu */
+    --menu-hover-background: #45a049; /* Màu nền khi hover menu */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    background-color: var(--menu-background); /* Thay đổi màu nền header */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: rgba(20, 2, 2, 0.747); /* Màu chữ của menu */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s; /* Thay đổi màu nền */
+    padding: 10px 15px; /* Thêm khoảng cách */
+    border-radius: 5px; /* Bo góc cho các mục menu */
+}
+
+header nav ul li a:hover {
+    background-color: var(--menu-hover-background); /* Màu nền khi hover menu */
+}
+
+header button {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+header button:hover {
+    background-color: #27ae60; /* Màu nền khi hover nút chuyển đổi */
+}
+
+/* Các phần còn lại giữ nguyên */
+.section {
+    padding: 60px 0;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+/* ... (Phần còn lại của mã CSS không thay đổi) ... */
+
+
+/* Sidebar cho màn hình nhỏ */
+#sidebar-toggle {
+    display: none;
+    font-size: 2em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Section chung */
+.section {
+    padding: 60px 0;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-content .text {
+    flex: 1;
+}
+
+.about-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-content .img img {
+    max-width: 250px;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    transition: transform 0.3s;
+}
+
+.about-content .img img:hover {
+    transform: scale(1.05);
+}
+
+/* Education, Skills, Projects */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.1em;
+    line-height: 1.6;
+    padding: 10px;
+    background-color: #f8f8f8;
+    margin-bottom: 10px;
+    border-left: 5px solid var(--primary-color);
+    transition: background-color 0.3s;
+}
+
+ul li:hover {
+    background-color: #e6e6e6;
+}
+
+/* Career Goals */
+#goals p {
+    text-align: center;
+    font-size: 1.3em;
+    font-style: italic;
+}
+
+/* Contact Section */
+#contact p {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1em;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Theme tối */
+.dark-theme {
+    --primary-color: #2c3e50;
+    --secondary-color: #27ae60;
+    --background-color: var(--dark-background);
+    --text-color: var(--dark-text);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul {
+        display: none;
+    }
+
+    #sidebar-toggle {
+        display: block;
+    }
+
+    nav.sidebar {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        width: 250px;
+        height: 100%;
+        background-color: var(--primary-color);
+        transition: left 0.3s ease;
+    }
+
+    nav.sidebar ul li {
+        display: block;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    nav.sidebar ul li a {
+        display: block;
+        padding: 15px;
+    }
+
+    nav.sidebar ul li a:hover {
+        background-color: #34495e;
+    }
+
+    main {
+        padding-left: 0;
+    }
+}
